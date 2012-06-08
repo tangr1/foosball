@@ -1,0 +1,21 @@
+#main.index
+  :each article in articles.slice(0,15)
+    .article
+      %h3
+        %a{href: "/" + article.name}&= article.title
+      = markdownEncode(article.markdown)
+
+#sidebar
+  .aside
+    = markdownEncode(description)
+  .bubble
+    %h4
+      目录
+    %ul
+      :each article in articles.slice(0,20)
+        %li
+          %a{href: "/" + article.name}&=article.title
+  .bubble
+    %h4
+      积分榜
+    待制作
